@@ -1,0 +1,15 @@
+services:
+  youtube-downloader:
+    build: .
+    entrypoint: ["python", "youtube_downloader.py"]
+    working_dir: /app
+    volumes:
+      - ./transcriptions:/app/transcriptions
+      - ./downloads:/app/downloads
+      - ~/.cache/whisper:/root/.cache/whisper
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+volumes:
+  whisper_model:

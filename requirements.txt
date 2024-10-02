@@ -1,0 +1,7 @@
+argparse
+openai-whisper
+whisper
+torch
+pytube
+tqdm
+yt-dlp
